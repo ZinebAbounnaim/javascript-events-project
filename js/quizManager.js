@@ -412,7 +412,7 @@ function downloadGift(studentName) {
   const pageHeight = pdf.internal.pageSize.getHeight();
 
   const img = new Image();
-  img.src = "../sticker.png";
+  img.src = "./sticker.png";
 
   img.onload = function () {
 
