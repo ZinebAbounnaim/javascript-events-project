@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive JavaScript Events Learning App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header" id="home">
+      <div class="headerOverlay"></div>
+
+      <nav class="navbar">
+        <div class="logo">JS Events Lab</div>
+
+        <ul class="navList">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#mouseSection">Mouse</a></li>
+          <li><a href="#keyboardSection">Keyboard</a></li>
+          <li><a href="#formSection">Form</a></li>
+          <li><a href="#scrollSection">Scroll</a></li>
+           <li><a href="#quizSection">Quiz</a></li>
+        </ul>
+      </nav>
+
+      <div class="headerContent">
+        <span >Expérience d’apprentissage interactive</span>
+
+        <h1>Learn JavaScript Events Interactively</h1>
+
+        <p>
+          Découvre comment JavaScript écoute les actions de l’utilisateur à
+          travers click, hover, et les réactions directes dans l’interface.
+        </p>
+
+        <a href="#mouseSection" class="startBtn">
+          Start Learning
+        </a>
+      </div>
+    </header>
+
+    <main class="mainContent">
+      <section id="mouseSection">
+        <div class="sectionContent">
+          <div class="leftSide">
+            <span class="sectionTag">Section 01</span>
+
+            <h2 class="sectionTitle">Mouse Events</h2>
+
+            <p class="sectionDesc">
+              Découvre comment les interactions avec la souris fonctionnent et
+              comment JavaScript réagit instantanément lorsque l’utilisateur
+              clique ou fait hover.
+            </p>
+
+            <div class="explainSourisBox">
+              <button class="backToDefalutBtn" type="button">×</button>
+              <h3 class="explainsourisTitle">Explanation</h3>
+              <div class="explainSourisText">
+                <p>
+                Les Mouse events se produisent lorsque l’utilisateur interagit
+                avec la page en utilisant la souris.
+              </p>
+
+              <p>
+                Dans cette section, tu peux tester <strong>click</strong> et
+                <strong>hover</strong>, puis observer directement les
+                changements dans l’interface.
+              </p>
+              </div>
+              
+            </div>
+
+            <div id="mouseTestBox">
+              <h4>Ce que tu vas tester</h4>
+
+              <p class="eventStatus">Aucune interaction pour le moment</p>
+
+              <div class="eventTags">
+                <span data-event="click">click</span>
+                <span data-event="dblclick">dblclick</span>
+                <span data-event="mouseenter">mouseenter</span>
+                <span data-event="mouseleave">mouseleave</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rightSide">
+            <div class="demoBox">
+              <div class="boxHead">
+                <h3>Demo Area</h3>
+                <span>Essaye l’interaction</span>
+              </div>
+
+              <div class="demoActions">
+                <button id="clickBtn">Click Me</button>
+
+                <div id="hoverBox">Hover on me</div>
+
+                <div class="counterBox">
+                  <p>Clicks: <span id="clickCount">0</span></p>
+                  <p>Double Clicks: <span id="dblClickCount">0</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resultBox">
+              <div class="boxHead">
+                <h3>Result Panel</h3>
+                <span>Live output</span>
+              </div>
+
+              <p id="mouseResult">En attente d’une interaction...</p>
+            </div>
+
+            <div class="ChallengeBox">
+              <h3>Mini Challenge</h3>
+
+              <p>
+                Clique sur le bouton, puis fais hover sur la box et observe
+                comment le Result Panel change à chaque fois.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- form -->
+      <section id="formSection">
+
+        <div class="sectionContent">
+          <div class="leftSide">
+
+            <span class="sectionTag">Section 02</span>
+
+            <h2 class="sectionTitle">Form Events</h2>
+
+            <p class="sectionDesc">
+              Découvre comment JavaScript réagit lorsque l’utilisateur écrit,
+              focus sur les inputs, change les sélections et submit un form.
+            </p>
+
+            <div class="explainFormBox">
+              <button class="backToDefalutBtn" type="button">×</button>
+              <h3 class="explainFormTitle">Explanation</h3>
+
+              <div id="explainFormText">
+                <p>
+                  Les Form events aident JavaScript à comprendre comment les
+                  utilisateurs interagissent avec les inputs et les forms en
+                  temps réel.
+                </p>
+
+                <p>
+                  Dans cette section, tu vas tester typing, selecting, checking
+                  et submitting data.
+                </p>
+              </div>
+            </div>
+
+            <div  id="formTestBox">
+              <h4>Ce que tu vas tester</h4>
+
+              <p class="eventStatus">Aucune interaction pour le moment</p>
+
+              <div class="eventTags">
+                <span data-event="focus">focus</span>
+                <span data-event="blur">blur</span>
+                <span data-event="input">input</span>
+                <span data-event="change">change</span>
+                <span data-event="submit">submit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rightSide">
+            <form class="demoBox">
+              <div class="boxHead">
+                <h3>Demo Area</h3>
+                <span>Essaye les form events</span>
+              </div>
+
+              <div class="demoActions">
+                <input type="text" id="nameInput" placeholder="Entre ton nom" />
+
+                <input
+                  type="email"
+                  id="emailInput"
+                  placeholder="Entre ton email"
+                />
+
+                <select id="levelSelect">
+                  <option value="">Choisis un niveau</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+
+                <label class="checkRow">
+                  <input type="checkbox" id="acceptCheck" />
+                  Accepter les conditions
+                </label>
+
+                <button type="submit" id="submitBtn">Submit Form</button>
+              </div>
+            </form>
+
+            <div class="resultBox">
+              <div class="boxHead">
+                <h3>Result Panel</h3>
+                <span>Live output</span>
+              </div>
+
+              <p id="formResult">En attente d’une interaction...</p>
+            </div>
+
+            <div class="ChallengeBox">
+              <h3>Mini Challenge</h3>
+
+              <p>
+                Remplis le form, change le niveau, puis submit et observe
+                comment chaque event met à jour le panel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- keyboard -->
+      <section id="keyboardSection">
+        <div class="sectionContent">
+          <div class="leftSide">
+            <span class="sectionTag">Section 03</span>
+
+            <h2 class="sectionTitle">Keyboard Events</h2>
+
+            <p class="sectionDesc">
+              Découvre comment JavaScript écoute lorsque l’utilisateur presse et
+              relâche les touches du clavier.
+            </p>
+
+            <div class="explainKeyboardBox">
+              <h3 class="explainKeyboardTitle">Explanation</h3>
+
+              <div id="explainKeyboardText">
+                <p>
+                  Les Keyboard events se produisent lorsque l’utilisateur appuie
+                  sur des touches et JavaScript réagit instantanément.
+                </p>
+
+                <p>
+                  Dans cette section, tu vas tester <strong>keydown</strong> et
+                  <strong>keyup</strong>.
+                </p>
+
+                <p>
+                  <strong>keydown</strong> se déclenche quand une touche est
+                  pressée.<br />
+                  <strong>keyup</strong> se déclenche quand la touche est
+                  relâchée.
+                </p>
+
+                <p>
+                  JavaScript peut aussi détecter des special keys comme
+                  <strong>Ctrl</strong>, <strong>Shift</strong>,
+                  <strong>Enter</strong> et <strong>Escape</strong>.
+                </p>
+
+                <p>
+                  Ces keys sont utiles pour créer des shortcuts et des smart
+                  actions.
+                </p>
+              </div>
+            </div>
+
+            <div  id="keyboardTestBox">
+              <h4>Ce que tu vas tester</h4>
+
+              <p class="eventStatus">Aucune touche pressée pour le moment</p>
+
+              <div class="eventTags">
+                <span data-event="keydown">keydown</span>
+                <span data-event="keyup">keyup</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rightSide">
+            <div class="demoBox">
+              <div class="boxHead">
+                <h3>Demo Area</h3>
+                <span>Essaye les keyboard events</span>
+              </div>
+
+              <div class="demoActions">
+                <input
+                  type="text"
+                  id="keyboardInput"
+                  placeholder="Écris quelque chose ici..."
+                />
+
+                <div class="keyInfoBox">
+                  <p>Key: <span id="keyValue">-</span></p>
+                  <p>Code: <span id="codeValue">-</span></p>
+                  <p>Ctrl: <span id="ctrlValue">false</span></p>
+                  <p>Shift: <span id="shiftValue">false</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resultBox">
+              <div class="boxHead">
+                <h3>Result Panel</h3>
+                <span>Live output</span>
+              </div>
+
+              <p id="keyboardResult">En attente d’une interaction clavier...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- scroll -->
+      <section id="scrollSection">
+        <div class="sectionContent">
+          <div class="leftSide">
+            <span class="sectionTag">Section 04</span>
+
+            <h2 class="sectionTitle">Scroll Events</h2>
+
+            <p class="sectionDesc">
+              Découvre comment JavaScript réagit lorsque l’utilisateur scroll up
+              ou scroll down et suit le mouvement en temps réel.
+            </p>
+
+            <div class="explainScrollBox">
+              <button class="backToDefalutBtn" type="button">×</button>
+              <h3 class="explainScrollTitle">Explanation</h3>
+
+              <div id="explainScrollText">
+                <p>
+                  Les Scroll events se produisent lorsque l’utilisateur se
+                  déplace dans le contenu avec mouse wheel ou trackpad.
+                </p>
+
+                <p>
+                  Dans cette section, tu vas tester scroll position, direction
+                  et progress.
+                </p>
+
+                <p>
+                  JavaScript peut détecter si l’utilisateur va up, down, atteint
+                  le top ou le bottom.
+                </p>
+              </div>
+            </div>
+
+            <div id="scrollTestBox">
+              <h4>Ce que tu vas tester</h4>
+
+              <p class="eventStatus">Aucun scroll détecté pour le moment</p>
+
+              <div class="eventTags">
+                <span data-event="scroll">scroll</span>
+                <span data-event="up">up</span>
+                <span data-event="down">down</span>
+                <span data-event="top">top</span>
+                <span data-event="bottom">bottom</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rightSide">
+            <div class="demoBox">
+              <div class="boxHead">
+                <h3>Demo Area</h3>
+                <span>Essaye les scroll events</span>
+              </div>
+
+              <div class="demoActions">
+                <div id="scrollProgressBox">
+                  <div id="scrollProgressBar"></div>
+                </div>
+
+                <div id="scrollDemoBox">
+                  <div class="scrollContent">
+                    <p>Scroll inside this box...</p>
+                    <p>JavaScript is listening...</p>
+                    <p>Continue à scroller...</p>
+                    <p>Tu fais très bien.</p>
+                    <p>Scroll plus pour tester progress.</p>
+                    <p>La direction peut changer aussi.</p>
+                    <p>Tu es presque arrivée...</p>
+                    <p>Top et bottom peuvent être détectés.</p>
+                    <p>Continue le scroll...</p>
+                    <p>Excellent travail !</p>
+                    <p>Tu as atteint la fin 🎯</p>
+                  </div>
+                </div>
+
+                <div class="keyInfoBox">
+                  <p>Scroll Top: <span id="scrollTopValue">0</span></p>
+                  <p>Direction: <span id="scrollDirection">-</span></p>
+                  <p>Progress: <span id="scrollPercent">0%</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resultBox">
+              <div class="boxHead">
+                <h3>Result Panel</h3>
+                <span>Live output</span>
+              </div>
+
+              <p id="scrollResult">En attente d’une interaction scroll...</p>
+            </div>
+
+            
+            </div>
+            <div class="ChallengeBox">
+              <h3>Mini Challenge</h3>
+
+              <p>
+                Scroll jusqu’au bottom de la box et observe comment JavaScript
+                met à jour progress en direct.
+              </p>
+        </div>
+          </div>
+          
+      </section>
+      <!-- quizSection -->
+      <section id="quizSection">
+        <div class="sectionContent">
+          <span class="sectionTag">Section 05</span>
+
+          <h2 class="sectionTitle">JavaScript Quiz</h2>
+
+          <p class="sectionDesc">
+            Test your knowledge about JavaScript events, DOM, forms, keyboard,
+            mouse and scroll.
+          </p>
+
+          <div id="quizContainer" class="quizContainer">
+          </div>
+          <div id="giftResult"></div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>

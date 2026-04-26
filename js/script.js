@@ -1,0 +1,10 @@
+import { initSourisEvents } from "./souris.js";
+import { initFormEvents } from "./form.js";
+import { initKeyboardEvents } from "./Keyboard.js";
+import { initScrolEvents } from "./scroll.js";
+import { initQuizSection } from "./quizManager.js";
+initQuizSection();
+initScrolEvents();
+initKeyboardEvents();
+initSourisEvents();
+initFormEvents();
